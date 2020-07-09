@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{4972F1F7-E499-450A-A322-E48EA45EF03D}|Default">
+  <MonoDevelop.Ide.ItemProperties.WebYugiohCardApplication PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/CardController.cs">
+    <Files>
+      <File FileName="Controllers/CardController.cs" Line="11" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WebYugiohCardApplication" expanded="True">
+            <Node name="WebYugiohCardApplication" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="CardController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
