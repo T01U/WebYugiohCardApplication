@@ -1,0 +1,165 @@
+﻿@model WebYugiohCardApplication.Models.ApiResponse
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Cards</h2>
+
+@using (Html.BeginForm("Index", "Card", FormMethod.Get))
+{
+    <p>
+        @Html.TextBox("Search")
+        <button class="btn btn-outline" type="submit">Search</button>
+    </p>
+}
+<label>
+    Types:
+    <select id='type'>
+        <option>Effect Monster</option>
+        <option>Flip Effect Monster</option>
+        <option>Flip Tuner Effect Monster</option>
+        <option>Gemini Monster</option>
+        <option>Normal Monster</option>
+        <option>Normal Tuner Monster</option>
+        <option>Pendulum Effect Monster</option>
+        <option>Pendulum Flip Effect Monster</option>
+        <option>Pendulum Normal Monster</option>
+        <option>Pendulum Tuner Effect Monster</option>
+        <option>Ritual Effect Monster</option>
+        <option>Ritual Monster</option>
+        <option>Skill Card</option>
+        <option>Spell Card</option>
+        <option>Spirit Monster</option>
+        <option>Toon Monster</option>
+        <option>Trap Card</option>
+        <option>Tuner Monster</option>
+        <option>Union Effect Monster</option>
+        <option>Fusion Monster</option>
+        <option>Link Monster</option>
+        <option>Pendulum Effect Fusion Monster</option>
+        <option>Synchro Monster</option>
+        <option>Synchro Pendulum Effect Monster</option>
+        <option>Synchro Tuner Monster</option>
+        <option>XYZ Monster</option>
+        <option>XYZ Pendulum Effect Monster</option>
+    </select>
+</label>
+
+<label>
+    Races:
+    <select id='race'>
+
+        @*Monster Cards*@
+        <optgroup label="Monster Cards"></optgroup>
+        <option>Aqua</option>
+        <option>Beast</option>
+        <option>Beast-Warrior</option>
+        <option>Creator-God</option>
+        <option>Cyberse</option>
+        <option>Dinosaur</option>
+        <option>Divine-Beast</option>
+        <option>Dragon</option>
+        <option>Fairy</option>
+        <option>Fiend</option>
+        <option>Fish</option>
+        <option>Insect</option>
+        <option>Machine</option>
+        <option>Plant</option>
+        <option>Psychic</option>
+        <option>Pyro</option>
+        <option>Reptile</option>
+        <option>Rock</option>
+        <option>Sea Serpent</option>
+        <option>Spellcaster</option>
+        <option>Thunder</option>
+        <option>Warrior</option>
+        <option>Winged Beast</option>
+
+        @*Spell Cards*@
+        <optgroup label="Spell Cards"></optgroup>
+        <option>Normal</option>
+        <option>Field</option>
+        <option>Equip</option>
+        <option>Continuous</option>
+        <option>Quick-Play</option>
+        <option>Ritual</option>
+
+        @*Trap Cards*@
+        <optgroup label="Trap Cards"></optgroup>
+        <option>Normal</option>
+        <option>Continuous</option>
+        <option>Counter</option>
+    </select>
+</label>
+
+    <table class="table">
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Atk
+            </th>
+            <th>
+                Def
+            </th>
+            <th>
+                Level
+            </th>
+            <th>
+                Race
+            </th>
+            <th>
+                Attribute
+            </th>
+            <th>
+                Archetype
+            </th>
+        </tr>
+        @for (int i = 0; i < Model.data.Length; i++)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => m.data[i].id)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.data[i].name)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.data[i].type)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.data[i].desc)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.data[i].atk)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.data[i].def)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.data[i].level)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.data[i].race)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.data[i].attribute)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.data[i].archetype)
+                </td>
+            </tr>
+        }
+    </table>
