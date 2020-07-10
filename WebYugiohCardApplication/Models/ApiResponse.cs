@@ -7,6 +7,10 @@ namespace WebYugiohCardApplication.Models
 {
     public class ApiResponse
     {
+        public ApiResponse()
+        {
+            data = new Card[0];
+        }
         public Card[] data { get; set; }
     }
 }

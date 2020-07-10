@@ -14,25 +14,38 @@ namespace WebYugiohCardApplication.Controllers
     public class CardController : Controller
     {
         // GET: Card
-        public async Task<ActionResult> IndexAsync(string search)
+        public ActionResult Index(string search, string race, string type)
         {
             ApiResponse model = new ApiResponse();
+            if (search == null && race == null && type == null)
+            {
+                return View(model);
+            }
             var uri = new Uri("https://db.ygoprodeck.com/api/v7/cardinfo.php");
             using (var client = new HttpClient())
             {
                 try
                 {
-                    if (!String.IsNullOrEmpty(search))
+                    var builder = new UriBuilder(uri);
+                    var query = HttpUtility.ParseQueryString(builder.Query);
+                    if (!(race == "All Races"))
                     {
-                        var builder = new UriBuilder(uri);
-                        var query = HttpUtility.ParseQueryString(builder.Query);
-                        query["fname"] = search;
-                        builder.Query = query.ToString();
-                        string url = builder.ToString();
-                        uri = new Uri(url);
+                        query["race"] = race;
                     }
-                    HttpResponseMessage result = await client.GetAsync(uri);
-                    var response = await result.Content.ReadAsStringAsync();
+                    if (!(type == "All Types"))
+                    {
+                        query["type"] = type;
+                    }
+                    if (!String.IsNullOrEmpty(search))
+                    {  
+                        query["fname"] = search; 
+                    }
+                    builder.Query = query.ToString();
+                    string url = builder.ToString();
+                    uri = new Uri(url);
+
+                    HttpResponseMessage result = client.GetAsync(uri).Result;
+                    var response = result.Content.ReadAsStringAsync().Result;
                     if (result.IsSuccessStatusCode)
                     {
                         model = JsonConvert.DeserializeObject<ApiResponse>(response);
@@ -44,7 +57,41 @@ namespace WebYugiohCardApplication.Controllers
                     return View(ex.Message);
                 }
             }
+            ViewData["race"] = race;
+            ViewData["type"] = type;
             return View(model);
+        }
+
+        public ActionResult Detail()
+        {
+            int cardId = 46986414;
+            ApiResponse model = new ApiResponse();
+            var uri = new Uri("https://db.ygoprodeck.com/api/v7/cardinfo.php");
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var builder = new UriBuilder(uri);
+                    var query = HttpUtility.ParseQueryString(builder.Query);
+                    query["id"] = cardId.ToString();
+                    builder.Query = query.ToString();
+                    string url = builder.ToString();
+                    uri = new Uri(url);
+
+                    HttpResponseMessage result = client.GetAsync(uri).Result;
+                    var response = result.Content.ReadAsStringAsync().Result;
+                    if (result.IsSuccessStatusCode)
+                    {
+                        model = JsonConvert.DeserializeObject<ApiResponse>(response);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    return View(ex.Message);
+                }
+            }
+            return View(model.data.FirstOrDefault());
         }
     }
 }

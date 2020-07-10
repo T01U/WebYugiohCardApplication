@@ -1,0 +1,89 @@
+﻿@model Card
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .itemBox {
+        position: relative;
+        border: solid;
+        border-color: black;
+        padding-top: 5px;
+        padding-right: 143.5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        height: auto;
+        line-height: 1.6em;
+    }
+    .itemBoxDesc {
+        position: relative;
+        border: solid;
+    }
+
+    .tdStyle {
+        padding-right: 10px;
+        padding-left: 9px;
+    }
+</style>
+<h2>@Model.name</h2>
+
+<img style="position: relative; display: inline; float:left;" src="~/CardImages/Images/@(Model.id).jpg" />
+<table style="margin-left:10px;">
+    <tbody>
+        <tr>
+            <td class="tdStyle">
+                <div class="itemBox">
+                    Card-Id
+                </div>
+            </td>
+            <td class="tdStyle">
+                <div class="itemBox">
+                    Type
+                </div>
+            </td>
+            <td>
+                <div class="itemBox">
+                    Attribute
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="tdStyle">
+                <div class="itemBox">
+                    Level
+                </div>
+            </td>
+            <td class="tdStyle">
+                <div class="itemBox">
+                    ATK
+                </div>
+            </td>
+            <td>
+                <div class="itemBox">
+                    DEF
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdStyle">
+                <div class="itemBox">
+                    Archetype
+                </div>
+            </td>
+            <td class="tdStyle">
+                <div class="itemBox">
+                    Race
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="padding-left: 9px;">
+                <div class="itemBox">
+                    Description
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

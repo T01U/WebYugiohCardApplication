@@ -1,4 +1,4 @@
-﻿@model WebYugiohCardApplication.Models.ApiResponse
+﻿@model ApiResponse
 
 @{
     ViewBag.Title = "Index";
@@ -10,90 +10,91 @@
 @using (Html.BeginForm("Index", "Card", FormMethod.Get))
 {
     <p>
-        @Html.TextBox("Search")
+        @Html.TextBox("search")
         <button class="btn btn-outline" type="submit">Search</button>
     </p>
+
+    <label>
+        Types:
+        <select name="type" id="type">
+            <option>All Types</option>
+            <option value="Effect Monster">Effect Monster</option>
+            <option value="Flip Effect Monster">Flip Effect Monster</option>
+            <option value="Flip Tuner Effect Monster">Flip Tuner Effect Monster</option>
+            <option value="Gemini Monster">Gemini Monster</option>
+            <option value="Normal Monster">Normal Monster</option>
+            <option value="Normal Tuner Monster">Normal Tuner Monster</option>
+            <option value="Pendulum Effect Monster">Pendulum Effect Monster</option>
+            <option value="Pendulum Flip Effect Monster">Pendulum Flip Effect Monster</option>
+            <option value="Pendulum Normal Monster">Pendulum Normal Monster</option>
+            <option value="Pendulum Tuner Effect Monster">Pendulum Tuner Effect Monster</option>
+            <option value="Ritual Effect Monster">Ritual Effect Monster</option>
+            <option value="Ritual Monster">Ritual Monster</option>
+            <option value="Skill Card">Skill Card</option>
+            <option value="Spell Card">Spell Card</option>
+            <option value="Spirit Monster">Spirit Monster</option>
+            <option value="Toon Monster">Toon Monster</option>
+            <option value="Trap Card">Trap Card</option>
+            <option value="Tuner Monster">Tuner Monster</option>
+            <option value="Union Effect Monster">Union Effect Monster</option>
+            <option value="Fusion Monster">Fusion Monster</option>
+            <option value="Link Monster">Link Monster</option>
+            <option value="Pendulum Effect Fusion Monster">Pendulum Effect Fusion Monster</option>
+            <option value="Synchro Monster">Synchro Monster</option>
+            <option value="Synchro Pendulum Effect Monster">Synchro Pendulum Effect Monster</option>
+            <option value="Synchro Tuner Monster">Synchro Tuner Monster</option>
+            <option value="XYZ Monster">XYZ Monster</option>
+            <option value="XYZ Pendulum Effect Monster">XYZ Pendulum Effect Monster</option>
+        </select>
+    </label>
+
+    <label>
+        Races:
+        <select name="race" id="race">
+            <option>All Races</option>
+            @*Monster Cards*@
+            <optgroup label="Monster Cards"></optgroup>
+            <option value="Aqua">Aqua</option>
+            <option value="Beast">Beast</option>
+            <option value="Beast-Warrior">Beast-Warrior</option>
+            <option value="Creator-God">Creator-God</option>
+            <option value="Cyberse">Cyberse</option>
+            <option value="Dinosaur">Dinosaur</option>
+            <option value="Divine-Beast">Divine-Beast</option>
+            <option value="Dragon">Dragon</option>
+            <option value="Fairy">Fairy</option>
+            <option value="Fiend">Fiend</option>
+            <option value="Fish">Fish</option>
+            <option value="Insect">Insect</option>
+            <option value="Machine">Machine</option>
+            <option value="Plant">Plant</option>
+            <option value="Psychic">Psychic</option>
+            <option value="Pyro">Pyro</option>
+            <option value="Reptile">Reptile</option>
+            <option value="Rock">Rock</option>
+            <option value="Sea Serpent">Sea Serpent</option>
+            <option value="Spellcaster">Spellcaster</option>
+            <option value="Thunder">Thunder</option>
+            <option value="Warrior">Warrior</option>
+            <option value="Winged Beast">Winged Beast</option>
+
+            @*Spell Cards*@
+            <optgroup label="Spell Cards"></optgroup>
+            <option value="Normal">Normal</option>
+            <option value="Field">Field</option>
+            <option value="Equip">Equip</option>
+            <option value="Continuous">Continuous</option>
+            <option value="Quick-Play">Quick-Play</option>
+            <option value="Ritual">Ritual</option>
+
+            @*Trap Cards*@
+            <optgroup label="Trap Cards"></optgroup>
+            <option value="Normal">Normal</option>
+            <option value="Continuous">Continuous</option>
+            <option value="Counter">Counter</option>
+        </select>
+    </label>
 }
-<label>
-    Types:
-    <select id='type'>
-        <option>Effect Monster</option>
-        <option>Flip Effect Monster</option>
-        <option>Flip Tuner Effect Monster</option>
-        <option>Gemini Monster</option>
-        <option>Normal Monster</option>
-        <option>Normal Tuner Monster</option>
-        <option>Pendulum Effect Monster</option>
-        <option>Pendulum Flip Effect Monster</option>
-        <option>Pendulum Normal Monster</option>
-        <option>Pendulum Tuner Effect Monster</option>
-        <option>Ritual Effect Monster</option>
-        <option>Ritual Monster</option>
-        <option>Skill Card</option>
-        <option>Spell Card</option>
-        <option>Spirit Monster</option>
-        <option>Toon Monster</option>
-        <option>Trap Card</option>
-        <option>Tuner Monster</option>
-        <option>Union Effect Monster</option>
-        <option>Fusion Monster</option>
-        <option>Link Monster</option>
-        <option>Pendulum Effect Fusion Monster</option>
-        <option>Synchro Monster</option>
-        <option>Synchro Pendulum Effect Monster</option>
-        <option>Synchro Tuner Monster</option>
-        <option>XYZ Monster</option>
-        <option>XYZ Pendulum Effect Monster</option>
-    </select>
-</label>
-
-<label>
-    Races:
-    <select id='race'>
-
-        @*Monster Cards*@
-        <optgroup label="Monster Cards"></optgroup>
-        <option>Aqua</option>
-        <option>Beast</option>
-        <option>Beast-Warrior</option>
-        <option>Creator-God</option>
-        <option>Cyberse</option>
-        <option>Dinosaur</option>
-        <option>Divine-Beast</option>
-        <option>Dragon</option>
-        <option>Fairy</option>
-        <option>Fiend</option>
-        <option>Fish</option>
-        <option>Insect</option>
-        <option>Machine</option>
-        <option>Plant</option>
-        <option>Psychic</option>
-        <option>Pyro</option>
-        <option>Reptile</option>
-        <option>Rock</option>
-        <option>Sea Serpent</option>
-        <option>Spellcaster</option>
-        <option>Thunder</option>
-        <option>Warrior</option>
-        <option>Winged Beast</option>
-
-        @*Spell Cards*@
-        <optgroup label="Spell Cards"></optgroup>
-        <option>Normal</option>
-        <option>Field</option>
-        <option>Equip</option>
-        <option>Continuous</option>
-        <option>Quick-Play</option>
-        <option>Ritual</option>
-
-        @*Trap Cards*@
-        <optgroup label="Trap Cards"></optgroup>
-        <option>Normal</option>
-        <option>Continuous</option>
-        <option>Counter</option>
-    </select>
-</label>
-
 <table class="table">
     <tr>
         <th>
@@ -125,6 +126,9 @@
         </th>
         <th>
             Archetype
+        </th>
+        <th>
+            Image
         </th>
     </tr>
     @for (int i = 0; i < Model.data.Length; i++)
@@ -160,6 +164,20 @@
             <td>
                 @Html.DisplayFor(m => m.data[i].archetype)
             </td>
+            <td>
+                <a href="Card/Detail?cardId=@Model.data[i].id"><img src="~/CardImages/ImagesSmall/@(Model.data[i].id).jpg" /></a>
+            </td>
         </tr>
     }
 </table>
+
+<script type="text/javascript">
+    @if(ViewData["race"] != null)
+    {
+        @:document.getElementById("race").value = "@ViewData["race"]";
+    }
+    @if(ViewData["type"] != null)
+    {
+        @:document.getElementById("type").value = "@ViewData["type"]";
+    }
+</script>
