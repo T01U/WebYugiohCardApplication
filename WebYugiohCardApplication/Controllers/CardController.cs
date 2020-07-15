@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -62,9 +63,8 @@ namespace WebYugiohCardApplication.Controllers
             return View(model);
         }
 
-        public ActionResult Detail()
+        public ActionResult Detail(int cardId)
         {
-            int cardId = 46986414;
             ApiResponse model = new ApiResponse();
             var uri = new Uri("https://db.ygoprodeck.com/api/v7/cardinfo.php");
             using (var client = new HttpClient())
@@ -92,6 +92,12 @@ namespace WebYugiohCardApplication.Controllers
                 }
             }
             return View(model.data.FirstOrDefault());
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

@@ -63,8 +63,6 @@ D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\WebYugiohCardApplication.TagHelpers.output.cache
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\WebYugiohCardApplication.RazorCoreGenerate.cache
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\Razor\Views\Card\Index.cshtml.g.cs
-D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -80,7 +78,6 @@ D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\WebYugiohCardApplication.pdb
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\WebYugiohCardApplication.genruntimeconfig.cache
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\Razor\Views\Card\Detail.cshtml.g.cs
-D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\WebYugiohCardApplication.csprojAssemblyReference.cache
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
@@ -398,3 +395,4 @@ D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\WebYugiohCardApplication.csproj.CoreCompileInputs.cache
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\WebYugiohCardApplication.MvcApplicationPartsAssemblyInfo.cs
 D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\WebYugiohCardApplication.MvcApplicationPartsAssemblyInfo.cache
+D:\Programing\C#\source\repos\WebYugiohCardApplication\WebYugiohCardApplication\WebYugiohCardApplication\obj\Debug\netcoreapp3.1\WebYugiohCardApplication.csprojAssemblyReference.cache

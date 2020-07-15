@@ -4,85 +4,97 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
-    .itemBox {
-        position: relative;
-        border: solid;
-        border-color: black;
-        padding-top: 5px;
-        padding-right: 143.5px;
-        padding-bottom: 5px;
-        padding-left: 10px;
-        height: auto;
-        line-height: 1.6em;
-    }
-    .itemBoxDesc {
-        position: relative;
-        border: solid;
-    }
 
-    .tdStyle {
-        padding-right: 10px;
-        padding-left: 9px;
+<style>
+    table {
+        border: solid black;
+        border-bottom: none;
+    }
+    th {
+        border: solid black;
+        border-bottom: none;
+        padding-left: 0.5em;
+    }
+    td {
+        border-bottom: solid;
+        border-right: solid;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+    a {
+        float: right;
     }
 </style>
-<h2>@Model.name</h2>
 
-<img style="position: relative; display: inline; float:left;" src="~/CardImages/Images/@(Model.id).jpg" />
-<table style="margin-left:10px;">
+<h2 style="margin-bottom:1em;">
+    @Model.name
+</h2>
+
+<img style="position: relative; display: inline; float:left; margin-right:1em;" src="~/CardImages/Images/@(Model.id).jpg" />
+<table style="table-layout:fixed" width="60%">
     <tbody>
         <tr>
-            <td class="tdStyle">
-                <div class="itemBox">
-                    Card-Id
-                </div>
-            </td>
-            <td class="tdStyle">
-                <div class="itemBox">
-                    Type
-                </div>
+            <th>Card Id</th>
+            <th>Type</th>
+            <th>Attribute</th>
+            <th>Race</th>
+        </tr>
+        <tr>
+            <td>
+                @Model.id
             </td>
             <td>
-                <div class="itemBox">
-                    Attribute
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td class="tdStyle">
-                <div class="itemBox">
-                    Level
-                </div>
-            </td>
-            <td class="tdStyle">
-                <div class="itemBox">
-                    ATK
-                </div>
+                @Model.type
             </td>
             <td>
-                <div class="itemBox">
-                    DEF
-                </div>
+                @Model.attribute
+            </td>
+            <td>
+                @Model.race
             </td>
         </tr>
         <tr>
-            <td class="tdStyle">
-                <div class="itemBox">
-                    Archetype
-                </div>
+            <th>Level</th>
+            <th>ATK</th>
+            <th>DEF</th>
+            <th>Archetype</th>
+        </tr>
+        <tr>
+            <td>
+                @Model.level
             </td>
-            <td class="tdStyle">
-                <div class="itemBox">
-                    Race
-                </div>
+            <td>
+                @Model.atk
+            </td>
+            <td>
+                @Model.def
+            </td>
+            <td>
+                @Model.archetype
             </td>
         </tr>
         <tr>
-            <td colspan="3" style="padding-left: 9px;">
-                <div class="itemBox">
-                    Description
-                </div>
+            <th colspan="4">Prices</th>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://www.amazon.de/s?k=@Model.name&__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_2">Amazon&nbsp;@Model.card_prices.Select(x => x.amazon_price).FirstOrDefault()&euro;</a>
+            </td>
+            <td>
+                <a href="https://www.cardmarket.com/de/YuGiOh/Products/Search?searchString=@Model.name">Cardmarket&nbsp;@Model.card_prices.Select(x => x.cardmarket_price).FirstOrDefault()&euro;</a>
+            <td>
+                <a href="https://www.ebay.de/sch/31395/i.html?_from=R40&_nkw=@Model.name&rt=nc&Sprache=Deutsch&_dcat=31395">Ebay&nbsp;@Model.card_prices.Select(x => x.ebay_price).FirstOrDefault()&euro;</a>
+            </td>
+            <td>
+                <a href="https://www.tcgplayer.com/search/all/product?q=@Model.name">TCGPlayer&nbsp;@Model.card_prices.Select(x => x.tcgplayer_price).FirstOrDefault()&euro;</a>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="4">Description</th>
+        </tr>
+        <tr>
+            <td colspan="4">
+                @Model.desc
             </td>
         </tr>
     </tbody>

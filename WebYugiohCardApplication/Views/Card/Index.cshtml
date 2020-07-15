@@ -9,10 +9,10 @@
 
 @using (Html.BeginForm("Index", "Card", FormMethod.Get))
 {
-    <p>
+    <label>
+        Name:
         @Html.TextBox("search")
-        <button class="btn btn-outline" type="submit">Search</button>
-    </p>
+    </label>
 
     <label>
         Types:
@@ -94,82 +94,14 @@
             <option value="Counter">Counter</option>
         </select>
     </label>
+
+    <button type="submit">Search</button>
 }
-<table class="table">
-    <tr>
-        <th>
-            Id
-        </th>
-        <th>
-            Name
-        </th>
-        <th>
-            Type
-        </th>
-        <th>
-            Description
-        </th>
-        <th>
-            Atk
-        </th>
-        <th>
-            Def
-        </th>
-        <th>
-            Level
-        </th>
-        <th>
-            Race
-        </th>
-        <th>
-            Attribute
-        </th>
-        <th>
-            Archetype
-        </th>
-        <th>
-            Image
-        </th>
-    </tr>
-    @for (int i = 0; i < Model.data.Length; i++)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(m => m.data[i].id)
-            </td>
-            <td>
-                @Html.DisplayFor(m => m.data[i].name)
-            </td>
-            <td>
-                @Html.DisplayFor(m => m.data[i].type)
-            </td>
-            <td>
-                @Html.DisplayFor(m => m.data[i].desc)
-            </td>
-            <td>
-                @Html.DisplayFor(m => m.data[i].atk)
-            </td>
-            <td>
-                @Html.DisplayFor(m => m.data[i].def)
-            </td>
-            <td>
-                @Html.DisplayFor(m => m.data[i].level)
-            </td>
-            <td>
-                @Html.DisplayFor(m => m.data[i].race)
-            </td>
-            <td>
-                @Html.DisplayFor(m => m.data[i].attribute)
-            </td>
-            <td>
-                @Html.DisplayFor(m => m.data[i].archetype)
-            </td>
-            <td>
-                <a href="Card/Detail?cardId=@Model.data[i].id"><img src="~/CardImages/ImagesSmall/@(Model.data[i].id).jpg" /></a>
-            </td>
-        </tr>
-    }
-</table>
+<br />
+@for (int i = 0; i < Model.data.Length; i++)
+{
+    <a href="Card/Detail?cardId=@Model.data[i].id"><img src="~/CardImages/ImagesSmall/@(Model.data[i].id).jpg" /></a>
+}
 
 <script type="text/javascript">
     @if(ViewData["race"] != null)
